@@ -49,12 +49,6 @@ RUN	apk --no-cache --update add \
 
 EXPOSE	80
 
-#
-# Rudimentary healthcheck
-#
-
-HEALTHCHECK CMD nginx -t &>/dev/null && wget -O - localhost:80 &>/dev/null \
-	|| exit 1
 
 #
 # Entrypoint, how container is run
